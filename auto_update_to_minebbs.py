@@ -1,3 +1,4 @@
+import json
 import os
 
 import requests
@@ -16,7 +17,7 @@ minebbs_id = '32'
 # minebbs资源下载地址
 file_url = "https://ci.opencollab.dev/job/NukkitX/job/Nukkit/job/master/lastSuccessfulBuild/artifact/target/nukkit-1.0-SNAPSHOT.jar"
 
-minebbs_api_url = f'https://api.minebbs.com/api/openapi/v1/resources/{id}/update'
+minebbs_api_url = f'https://api.minebbs.com/api/openapi/v1/resources/{minebbs_id}/update'
 
 # 缓存文件路径
 cache_file_dir = os.getcwd()
@@ -54,7 +55,7 @@ if __name__ == '__main__':
             'file_url': file_url
         }
 
-        response = requests.post(minebbs_api_url, headers=headers, data=data)
+        response = requests.post(minebbs_api_url, headers=headers, data=json.dumps(data))
 
         if response.status_code == 200:
             print('Uploaded successfully')
