@@ -1,0 +1,14 @@
+{
+  "minebbs": {
+    "token": "YOUR_TOKEN_HERE",
+    "res_id": 32,
+    "res_file_url": "https://ci.opencollab.dev/job/NukkitX/job/Nukkit/job/master/lastSuccessfulBuild/artifact/target/nukkit-1.0-SNAPSHOT.jar"
+  },
+  "github": {
+    "repo_owner": "CloudburstMC",
+    "repo_name": "Nukkit"
+  },
+  "deepseek": {
+    "token": "YOUR_TOKEN_HERE"
+  }
+}
