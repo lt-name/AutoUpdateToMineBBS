@@ -1,0 +1,14 @@
+# IDE 配置
+.idea/
+
+# macOS 系统文件
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 含真实密钥的本地配置 (模板见 config.json.example)
+config.json
+last_commit_id.txt

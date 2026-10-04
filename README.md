@@ -5,12 +5,13 @@
 ## 功能
 
 - 从 GitHub 仓库获取最新的提交信息。
+- 通过 MineBBS API 读取资源已发布的版本列表，只在最新提交尚未发布时才更新。
 - 使用 DeepSeek API 将提交信息翻译成英文。 (可选)
 - 将翻译后的提交信息上传到 MineBBS。
 
 ## 配置
 
-在运行脚本之前，你需要将 [`config.json`](https://github.com/lt-name/AutoUpdateToMineBBS/blob/master/config.json) 文件放置在脚本所在的目录中。`config.json` 文件的结构如下：
+在运行脚本之前，你需要将 [`config.json.example`](https://github.com/lt-name/AutoUpdateToMineBBS/blob/master/config.json.example) 复制为 `config.json`，并放置在脚本所在的目录中。`config.json` 已被 `.gitignore` 忽略，填入真实密钥后不会被误提交。其结构如下：
 
 ```json
 {
