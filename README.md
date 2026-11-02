@@ -5,9 +5,9 @@
 ## 功能
 
 - 从 GitHub 仓库获取最新的提交信息。
-- 通过 MineBBS API 读取资源已发布的版本列表，只在最新提交尚未发布时才更新。
+- 通过 [MineBBS 开放平台 API](https://open.minebbs.com/api/docs/) 读取资源已发布的版本列表，只在最新提交尚未发布时才更新。
 - 使用 DeepSeek API 将提交信息翻译成英文。 (可选)
-- 将翻译后的提交信息上传到 MineBBS。
+- 发布新版本（`POST /resources/{id}/versions`）并将提交信息作为更新日志发布（`POST /resources/{id}/updates`）。写操作带 `Idempotency-Key`，24 小时内重试不会重复发布。
 
 ## 配置
 
@@ -16,7 +16,7 @@
 ```json
 {
   "minebbs": { #MineBBS 配置
-    "token": "YOUR_TOKEN_HERE", # MineBBS API 密钥 申请密钥：https://api.minebbs.com/
+    "token": "YOUR_TOKEN_HERE", # MineBBS 开放平台 API 密钥 申请密钥：https://open.minebbs.com/
     "res_id": 32, # MineBBS 资源 ID (通常为资源路径最后的 .xx )
     "res_file_url": "https://ci.opencollab.dev/job/NukkitX/job/Nukkit/job/master/lastSuccessfulBuild/artifact/target/nukkit-1.0-SNAPSHOT.jar" # MineBBS 资源更新后的下载链接
   },
